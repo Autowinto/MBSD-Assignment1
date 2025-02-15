@@ -1,22 +1,34 @@
 package main.metamodel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Machine {
+	private List<State> states;
+	private State initialState;
 
-	public List<State> getStates() {
-		// TODO Auto-generated method stub
-		return null;
+	public Machine(List<State> states, State initialState) {
+		this.states = states;
+		this.initialState = initialState;
 	}
 
+	public List<State> getStates() {
+		return states;
+	}
+
+
 	public State getInitialState() {
-		// TODO Auto-generated method stub
-		return null;
+		return initialState;
 	}
 
 	public State getState(String string) {
-		// TODO Auto-generated method stub
-		return null;
+		for (State state : states) {
+			if (state.getName().equals(string)) {
+				return state;
+			}
+		}
+
+		throw new IllegalArgumentException("State not found: " + string);
 	}
 
 	public int numberOfIntegers() {

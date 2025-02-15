@@ -3,10 +3,14 @@ package main.metamodel;
 import java.util.List;
 
 public class State {
+	private String name;
+
+	public State(String name) {
+		this.name = name;
+	}
 
 	public Object getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 	public List<Transition> getTransitions() {
