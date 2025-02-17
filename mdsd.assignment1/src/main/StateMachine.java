@@ -17,13 +17,13 @@ public class StateMachine {
 	private String currentOperation;
 	private Transition currentTransition;
 	private Map<String, Integer> variables = new HashMap<>();
-	private Map<String, Integer> operations = new HashMap<>();
 
 	private enum Operation {
 		EQUALS, GREATER_THAN, LESS_THAN
 	}
 
-	private Map<> operationConditions = new HashMap<>();
+	// Holds operation type and value to compare with
+	private Map<Operation, Integer> operationConditions = new HashMap<>();
 
 	public Machine build() {
 		return new Machine(states, initialState, variables);
@@ -85,7 +85,6 @@ public class StateMachine {
 	}
 
 	public StateMachine ifEquals(String string, int i) {
-		// TODO Auto-generated method stub
 		return this;
 	}
 
